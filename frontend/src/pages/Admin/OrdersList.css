@@ -1,0 +1,178 @@
+/*
+ * Admin Orders List Styles
+ * This stylesheet provides a clean, modern, and responsive design
+ * for the admin orders page. It includes styles for the main layout,
+ * filters, table, and status labels.
+ */
+
+/* General and Layout Styles */
+.orders-list-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7f9; /* Lighter background for a cleaner look */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.orders-list-page {
+  /* This margin depends on the sidebar width. Let's make it more flexible. */
+  margin-left: 280px;
+  width: calc(100% - 280px);
+  padding: 2.5rem; /* Consistent padding */
+  box-sizing: border-box; /* Prevents padding from adding to the total width */
+}
+
+/* Page Heading */
+.orders-list-page h2 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 600; /* Use a standard font-weight */
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 3px solid #007bff; /* Vibrant blue border */
+}
+
+/* Filters and Search Bar */
+.orders-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem; /* Increased gap for better spacing */
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.orders-filters button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #007bff;
+  background: white;
+  color: #007bff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.orders-filters button:hover,
+.orders-filters button.active {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Orders Table */
+.orders-table {
+  width: 100%;
+  border-collapse: collapse; /* Use collapse for better consistency */
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.orders-table th {
+  background: #34495e; /* Solid color is often cleaner than a gradient */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 500; /* Consistent font-weight */
+  font-size: 1rem;
+}
+
+.orders-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef; /* Lighter border for subtlety */
+  transition: background-color 0.2s ease;
+  color: #555;
+}
+
+.orders-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.orders-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status Badges */
+.status {
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+  text-align: center;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.accepted {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.status.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+/* Action Buttons in Table */
+.orders-table button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+}
+
+.orders-table button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .orders-list-container {
+    flex-direction: column;
+  }
+
+  .orders-list-page {
+    margin-left: 0;
+    width: auto;
+    padding: 1.5rem;
+  }
+
+  .orders-table {
+    /* Transforms the table for mobile screens */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap; /* Prevents wrapping within cells */
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 1rem;
+  }
+}
+
+/* Empty State */
+.orders-table tbody tr:only-child td {
+  text-align: center;
+  padding: 3rem;
+  color: #95a5a6;
+  font-style: italic;
+  font-weight: 400;
+}
