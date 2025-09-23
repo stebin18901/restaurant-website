@@ -6,6 +6,7 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import itemRoutes from "./routes/itemRoutes.js";
 import settingRoutes from "./routes/settingRoutes.js";
+import healthRoutes from "./routes/health.js"
 
 
 
@@ -23,5 +24,6 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/items", itemRoutes);
 app.use("/api/settings", settingRoutes);
+app.use("/api", healthRoutes);
 
 export default app;
