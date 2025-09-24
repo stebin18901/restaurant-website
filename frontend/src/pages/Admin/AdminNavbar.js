@@ -8,7 +8,7 @@ const AdminNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    localStorage.removeItem("adminToken");
+    localStorage.removeItem("token"); // Consistent token key
     navigate("/admin/login");
   };
 
