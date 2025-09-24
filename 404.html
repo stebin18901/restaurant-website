@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0;url=/restaurant-website/" />
+    <script>
+      // Redirect to index.html but preserve path for React Router
+      sessionStorage.redirect = location.pathname + location.search;
+      window.location.href = "/restaurant-website/";
+    </script>
+  </head>
+  <body></body>
+</html>
