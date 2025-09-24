@@ -24,6 +24,6 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/items", itemRoutes);
 app.use("/api/settings", settingRoutes);
-app.use("/api", healthRoutes);
+
 
 export default app;

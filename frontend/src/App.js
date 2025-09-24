@@ -9,6 +9,7 @@ import AdminCategories from "./pages/Admin/AdminCategories";
 import AdminItems from "./pages/Admin/AdminItems";
 import AdminEditItem from "./pages/Admin/AdminEditItem";
 import AdminSettings from "./pages/Admin/AdminSettings";
+import PublicRoute from "./components/PublicRoute";
 
 function App() {
   return (
@@ -17,8 +18,14 @@ function App() {
         {/* Customer-facing route */}
         <Route path="/" element={<OrderPage />} />
 
-        {/* Admin routes */}
-        <Route path="/admin/login" element={<Login />} />
+        <Route 
+          path="/admin/login" 
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          } 
+        />
         <Route
           path="/admin/dashboard"
           element={
